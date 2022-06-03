@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <form th:object="${ato}" method="post" th:action="@{/salvar}">
+
+        Nome: <input type="text" th:field="*{Nome}"> <br />
+        Categoria: <input type="text" th:field="*{Categoria}"> <br />
+        Autor: <input type="text" th:field="*{Autor}"> <br />
+        Ano: <input type="number" th:field="*{anoLancamento}"> <br />
+        Em cartaz: <input type="number" th:field="*{cartaz}"> <br />
+
+        <button type="submit"> Enviar</button>
+        <button type="reset"> Limpar</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
