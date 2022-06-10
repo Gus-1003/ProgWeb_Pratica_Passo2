@@ -1,8 +1,8 @@
 package pratica.filmes.domain;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 /*
 -> O projeto "Lombok" é uma biblioteca Java que visa a diminuição de código boilerplate e 
@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // Cria um construtor vazio
 @AllArgsConstructor // Cria um construtor com todos os atributos da classe
 @Data // Getter´s e Setter´s
-public class Filmes {
+public class Usuario {
     
     @Id //Campo relacionado à chave primária da tabela.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,14 +32,8 @@ public class Filmes {
     // Tanto o @NotBlanck quanto o @Size dependem da dependencia "Hibernate" no Pom;
 
     @NotBlank //Restrição de campo - O valor desse campo não deve ser nulo e o comprimento aparado deve ser maior que zero .
-    String titulo;
-    String diretor;
-    String sinopse;
-    String imagem;
+    String username;
+    String password;
 
-    @Size(min = 1900) //anotação de validação de bean -  validar seu valores entre os atributos min e max:
-    int anoLancamento;
-
-    @Size(min = 1, max = 5)
-    int avaliacao;
+    boolean admin;
 }
